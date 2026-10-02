@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent-contrast: #FFFFFF;
+  --color-ink: #18181B;
+  --color-surface: #FFFFFF;
+  --color-surface-card: #FFFFFF;
+  --color-surface-container: #FAF8F5;
+  --color-surface-container-high: #F2EFE9;
+  --color-surface-container-low: #FFFFFF;
+  --color-border-line: #E8E4DF;
+  --color-outline: #D7D1CB;
+  --color-mute: #52525B;
+  --color-primary: #EA580C;
+  --color-primary-hover: #C2410C;
+  --color-primary-container: #FFF7ED;
+  --color-primary-text: #C2410C;
+
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Newsreader", Georgia, Cambria, serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent iOS Safari 16px auto-zoom */
+  input, textarea, select {
+    font-size: 16px;
+  }
+  @media (min-width: 640px) {
+    input, textarea, select {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+html.dark {
+  --color-accent-contrast: #FFFFFF;
+  --color-ink: #FFFFFF;
+  --color-surface: #0E0E10;
+  --color-surface-card: #18181B;
+  --color-surface-container: #222225;
+  --color-surface-container-high: #2C2C30;
+  --color-surface-container-low: #121214;
+  --color-border-line: #27272A;
+  --color-outline: #3F3F46;
+  --color-mute: #A1A1AA;
+  --color-primary: #F97316;
+  --color-primary-hover: #FB923C;
+  --color-primary-container: #431407;
+  --color-primary-text: #FDBA74;
+}
+
+/* Professional Typography Hierarchy */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.font-editorial-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.font-editorial-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.font-mono-numbers {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hide scrollbar for clean horizontal pill row */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom smooth scrollbar with brand orange accent */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(234, 88, 12, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(234, 88, 12, 0.6);
+}
+
+/* ThreeUI Shader Frame integration */
+.shader-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  overflow: hidden;
+  background-color: #05070a;
+}
